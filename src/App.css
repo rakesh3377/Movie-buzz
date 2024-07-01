@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}   
+.main-body{
+    position: relative;
+    background-color: #ffe63a;
+    opacity: 0.9px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.logo-ico{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    margin-right: 3px
+}
+.header{
+    background-color: #0099f7;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+nav ul li{
+    list-style: none;
+    margin-right: 1rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #ffe63a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    position: relative;
+}
+nav ul li a::before{
+    content: "";
+    position: absolute;
+    top:-10px;
+    left:50%;
+    height: 3px;
+    width:0;
+    transform: translateX(-50%);
+    background-color: #ffe63a;
+    transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover:before{
+    width:100%;
+}
+nav ul li a:focus{
+    background-color: #f11712;
+    opacity: 0.2px;
+    border-radius: 20px;
+}
+nav ul li a:focus::before{
+    width: 0%;
+}
+/* nav ling [ppro*/
+.icons{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.search-btn{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.search-btn input{
+    width: 200px;
+    border: none;
+    padding: 10px 10px;
+    outline: none;
+}
+
+.searchicon{
+    outline: none;
+    border: none;
+    font-size: 2rem;
+}
+.container{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.movie{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    width: 250px;
+    background-color: #f11712;
+    margin: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.movie .poster{
+    width: 100%;
+    height: 250px;
+}
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.movie-details .box{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.movie-details .title{
+    width: 160px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+.movie-details .overview{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 100%;
+    background-color: #0099f7;
+    opacity: 0.9;
+    color: white;
+    box-sizing: border-box;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out;
+    overflow-y: auto;
+    transform: translateY(101%);
+}
+.movie-details:hover .overview{
+    transform: translateY(0%);
+}
+.rating{
+    background-color: #ffe63a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px solid #ffe63a;
+    box-shadow: inset 0 5px 5px rgba(0,0,0,0.5);
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #0099f7;
+    font-size: 13px;
+}
+@media (max-width:900px){
+
+    .logo{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 10px;        
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+    }
+    form{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: row;
+    }
+    nav ul li{
+        padding-top: 10px;
+    }
+    .search-btn{
+        text-align: center;
+    }
+/* navbar links styleing */
+
+    .icons{
+        display: block;
+        line-height: 60px;
+        margin-right: 20px;
+    }
+    .nav-links{
+        position: fixed;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #282e3c;
+        z-index: 1;
+    }
+    .nav-links.active{
+        top: 80px;
+        left: 0;
+        padding: 1px;
+    }
+    .nav-links li{
+        border-top: 2px solid white;
+        width: 100%;
+        line-height: 70%;
+        text-align: center;
+        padding: 20px 30px;
+    }
+    .nav-links li a{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+.notfound{
+    font-size: 40px;
+    font-weight: bold;
+}
+
